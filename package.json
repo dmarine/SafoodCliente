@@ -1,0 +1,26 @@
+{
+  "name": "safoodcliente",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "sh scripts/test.sh",
+    "build": "sh scripts/build.sh",
+    "deploy": "npm run build && sh scripts/deploy.sh",
+    "serve": "onchange src/index.html -- npm run deploy",
+    "json": "json-server --watch src/biblioteca-original.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmarine/SafoodCliente.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmarine/SafoodCliente/issues"
+  },
+  "homepage": "https://github.com/dmarine/SafoodCliente#readme"
+}
