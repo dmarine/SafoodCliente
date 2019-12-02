@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/dmarine/SafoodCliente/issues"
   },
-  "homepage": "https://github.com/dmarine/SafoodCliente#readme"
+  "homepage": "https://github.com/dmarine/SafoodCliente#readme",
+  "dependencies": {
+    "sass": "^1.23.7"
+  }
 }
