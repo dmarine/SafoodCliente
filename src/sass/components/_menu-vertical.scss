@@ -1,0 +1,18 @@
+.menu-vertical {
+    display: flex;
+    flex-direction: column;
+    background-color: #2d3748;
+
+    &__section {
+        border-bottom: .1rem solid #1a202c;
+        width: 100%;
+        padding: 1rem 0 0 0;
+
+        &-title {
+            font-size: .8rem;
+            color: #97A4B5;
+            font-weight: bold;
+            margin: 1rem 1rem .5rem 1rem;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+.body {
+    display: grid;
+    grid-template-areas: "body__menu-vertical body__content";
+    grid-template-columns: 18rem;
+
+    &__menu-vertical {
+        grid-area: body__menu-vertical;
+        background-color: #2d3748;
+    }
+
+    &__content {
+        grid-area: body__content;
+        background: #e2e8f0;
+    }
+}

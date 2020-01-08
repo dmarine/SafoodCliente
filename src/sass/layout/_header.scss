@@ -1,0 +1,21 @@
+.header {
+    display: grid;
+    grid-template-areas: "header__logo header__menu";
+    grid-template-columns: 18rem;
+
+    &__logo {
+        grid-area: header__logo;
+        background: #1a202c;
+        display: flex;
+        justify-content: center;
+
+        .logo-img {
+            width: 9rem;
+        }
+    }
+
+    &__menu {
+        grid-area: header__menu;
+        background: #ffffff;
+    }
+}

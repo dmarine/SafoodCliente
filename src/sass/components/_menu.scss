@@ -1,0 +1,27 @@
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-flow: row-reverse wrap;
+    padding: .8rem;
+    
+
+    &__option {
+        color: #1a202c;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin: 0 .3rem;
+        text-decoration: none;
+
+        .avatar{
+            width: 2rem;
+            cursor: pointer;
+            border: 1px solid #333;
+            border-radius: 50%;
+        }
+
+        &--right {
+            margin-right: auto;
+        }
+    }
+}

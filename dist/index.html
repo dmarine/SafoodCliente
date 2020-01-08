@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Safood | Engorda sin preocupaciones</title>
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <div class="app">
+        <div class="app__header">
+          <div class="header">
+            <div class="header__logo">
+              <img class="logo-img" src="images/logo.png">
+            </div>
+            <div class="header__menu">
+              <div class="menu">
+                <div class="menu__option">
+                  <img class="avatar" src="images/miss-avatar.png">
+                </div>
+                <div class="menu__option"><a class="link" href="#">Quiero comer!</a></div>
+                <div class="menu__option"><a class="link" href="#">Quiero comida!</a></div>
+                <div class="menu__option menu__option--right">
+                  <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input class="search__text-box" placeholder="Buscar...">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="app__body">
+          <div class="body">
+            <div class="body__menu-vertical">
+              <div class="menu-vertical">
+                <div class="menu-vertical__section">
+                  <h1 class="menu-vertical__section-title">Tipos de comida</h1>
+                  <div class="l-options" id="category"></div>
+                </div>
+              </div>
+            </div>
+            <div class="body__content">
+              <div class="slider">
+                <div class="slider__container" id="slider"></div>
+                <div class="slider__controllers">
+                  <div class="slider__controller slider__controller--left">&#10094;</div>
+                  <div class="slider__controller slider__controller--right">&#10095;</div>
+                </div>
+              </div>
+
+              <div class="l-columns l-columns--3-columns l-columns--m-2-columns l-columns--s-1-columns">
+                <div class="card">
+                  <i class="fab fa-weixin card__highlight"></i>
+                  <h3 class="card__title">Quienes somos</h3>
+                  <p class="card__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum, neque quis luctus
+                    efficitur, risus diam fringilla arcu, at mattis quam magna a quam. Nulla ante sem, venenatis sit amet
+                    posuere vel, pharetra eu ante.
+                  </p>
+                </div>
+                <div class="card">
+                  <i class="fa fa-lightbulb card__highlight"></i>
+                  <h3 class="card__title">Idea</h3>
+                  <p class="card__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum, neque quis luctus
+                    efficitur, risus diam fringilla arcu, at mattis quam magna a quam. Nulla ante sem, venenatis sit amet
+                    posuere vel, pharetra eu ante.
+                  </p>
+                </div>
+                <div class="card">
+                  <i class="fa fa-users card__highlight"></i>
+                  <h3 class="card__title">Autores</h3>
+                  
+                  <p class="card__text"><i class="fa fa-user"></i> Daniel Marín</p>
+                  <p class="card__text"><i class="fa fa-user"></i> David Jiménez</p>
+                  <p class="card__text"><i class="fa fa-user"></i> Jose Antonio Rodríguez</p>
+                  <p class="card__text"><i class="fa fa-user"></i> Miguel Martínez </p>
+                  <p class="card__text"><i class="fa fa-user"></i> Liberto Álvarez </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="app__footer">
+          <div class="footer">
+            <div class="footer__head">
+              <a href="#" class="link link--light"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="link link--light"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="link link--light"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="link link--light"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer__body">
+                <p>@ 2019 Copyright - Safood</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="js/app.js" type="module"></script>
+  </body>
+</html>
