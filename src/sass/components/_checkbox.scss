@@ -1,0 +1,43 @@
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin: .5rem;
+
+    &__check {
+        background-color: #1a202c;
+        height: 1.2rem;
+        width: 1.2rem;
+        appearance: none;
+        border-radius: .3rem;
+        -webkit-appearance: none; 
+        -moz-appearance: none; 
+        appearance: none;
+        cursor: pointer;
+        margin-right: .3rem;
+        
+        &:checked {
+            background-color: #667eea;
+            border-radius: .3rem;
+            background-image: url("../images/check.svg");
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        &:focus {
+            outline: transparent;
+        }
+    }
+
+    &__text {
+        color: #ffffff;
+    }
+
+}
+
+/**
+<div class="checkbox">
+    <input class="checkbox__check" type="checkbox">
+    <span class="checkbox__text"> Ensalada</span>
+</div>
+*/

@@ -1,0 +1,20 @@
+.app {
+    display: grid;
+    grid-template-areas: "app__header"
+                         "app__body"
+                         "app__footer";
+    
+    font-family: 'Segoe UI Regular', 'Roboto', sans-serif;
+
+    &__header {
+        grid-area: app__header;
+    }
+
+    &__body {
+        grid-area: app__body;
+    }
+
+    &__footer {
+        grid-area: app__footer;
+    }
+}

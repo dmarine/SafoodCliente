@@ -1,0 +1,21 @@
+.search {
+    background-color: #edf2f7;
+    border: .15rem solid #edf2f7;
+    padding: .6rem;
+    border-radius: .3rem;
+    width: 20rem;
+
+    &__text-box {
+        background-color: transparent;
+        border: none;
+    }
+
+    &__text-box:focus {
+        outline: transparent;
+    }
+
+    &:focus-within {
+        background-color: #ffffff;
+        border: .15rem solid #edf2f7;
+    }
+}

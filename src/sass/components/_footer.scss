@@ -1,0 +1,23 @@
+.footer {
+    background-color: #4d5d80;
+    color: #ffffff;
+    text-align: center;
+    font-size: .8rem;
+
+    i {
+        margin: 0 .6rem;
+        font-size: 1.3rem;
+    }
+
+    &__head {
+        padding: 2rem;
+    }
+
+    &__body {
+        padding: 1rem;
+    }
+
+    &__head {
+        background-color: #607198;
+    }
+}

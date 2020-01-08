@@ -10,8 +10,8 @@
     "test": "sh scripts/test.sh",
     "build": "sh scripts/build.sh",
     "deploy": "npm run build && sh scripts/deploy.sh",
-    "serve": "onchange src/index.html -- npm run deploy",
-    "json": "json-server --watch src/biblioteca-original.json"
+    "serve": "onchange src/* -- npm run build",
+    "sass": "sass --watch src/sass/main.scss src/css/app.css"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,12 @@
     "url": "https://github.com/dmarine/SafoodCliente/issues"
   },
   "homepage": "https://github.com/dmarine/SafoodCliente#readme",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0",
+    "node-sass": "^4.13.0"
+  },
   "dependencies": {
+    "jquery": "^3.4.1",
     "sass": "^1.23.7"
   }
 }
