@@ -1,0 +1,123 @@
+.modal {
+    display: none;
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    width: 30rem;
+    border-radius: 0.6rem;
+    padding-top: 2rem;
+    
+    &__body {
+        padding: 16px;
+        &-text{
+            font-size: 1.2rem;
+
+        }
+        
+    }
+
+    &__footer{
+        display:flex;
+        padding-top: 2rem;
+    }
+    &__data{
+        text-align: center;
+    }
+
+    &__title{
+        
+        border-bottom: 0.1rem solid #4d5d80;
+        text-align: center;
+        font-size: 2.4rem;
+        height: 3rem;
+        padding-top: 0.2rem;
+    }
+
+    &--ancho {
+        width: 50rem;;
+    }
+
+    &__text, &__text-box {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+
+    &-text {
+        font-size: 1.2rem;
+    }
+
+    &__text{
+        &--error {
+            color: #ff4040;
+        }
+    }
+
+    &__text-box {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #edf2f7;
+        background-color: #edf2f7;
+        border-radius: .3rem;
+        box-sizing: border-box;
+        
+        &--error {
+            border: 1px solid #ff4040;
+            color: #ff4040;
+
+            &:focus {
+                outline: transparent;
+            }
+
+            &::placeholder {
+                color: #ff4040;
+            }
+        }
+    }
+
+    &__header {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+
+        &-image {
+            width: 4rem;
+            border-radius: 50%;
+            border: 1px solid #000000;
+        }
+    
+        &-close {
+            position: absolute;
+            right: .8rem;
+            top: -3rem;
+            color: #000000;
+            font-size: 1.5rem;
+            font-weight: bold;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__footer{
+        &-price{
+            font-weight: bold;
+            font-size: 1.4rem;
+            padding: 1rem;
+            margin-right: auto;
+        }
+    }
+
+    &--zoom {
+        animation-name: zoom;
+        animation-duration: 0.4s;
+    }
+
+    &--show {
+        display: block !important;
+    }
+}

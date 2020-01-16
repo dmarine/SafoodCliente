@@ -31,6 +31,10 @@
 
     &__text {
         color: #ffffff;
+
+        &--dark {
+            color: #333333;
+        }
     }
 
 }

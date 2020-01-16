@@ -3,6 +3,10 @@
     grid-template-areas: "header__logo header__menu";
     grid-template-columns: 18rem;
 
+    &__link {
+        width: 100%;
+    }
+
     &__logo {
         grid-area: header__logo;
         background: #1a202c;
@@ -11,6 +15,8 @@
 
         .logo-img {
             width: 9rem;
+            display: block;
+            margin: auto;
         }
     }
 

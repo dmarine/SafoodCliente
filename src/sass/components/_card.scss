@@ -1,70 +1,42 @@
 .card {
-  padding: 40px;
-  width: 300px;
-  transition: box-shadow 0.3s;
-  margin: 2rem auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
+  overflow: hidden;
+  max-width: 24rem;
+  border-radius: .3rem;
+  margin: .5rem auto;
+  position: relative;
+  background-color: #fff;
+  cursor: pointer;
 
-  &:hover {
-    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-
-      .card__highlight {
-        color: #a3bef9;
-      }
-
-      .card__text {
-        color: #555;
-      }
-
-      .card__title {
-        color: #a3bef9;
-      }
-
-      .card__title:after {
-        width: 25px;
-      }
+  &__image {
+      width: 100%;
+      height: 20rem;
   }
-  
-  &__highlight {
-    font-size: 2.6em;
-    transition: color 0.3s;
-    color: #a2a2a2;
-    
-    &:before, &:after {
-      position: static;
-    }
+
+  &__body, &__footer {
+      padding: 1rem 1.5rem;
+  }
+
+  &__body {
+    margin-bottom: 2rem;
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
 
   &__title {
-    color: darken(#a2a2a2, 20%);
-    display: inline-block;
-    font-size: 24px;
-    font-weight: 100;
-    transition: color 0.3s;
-    
-    &:after {
-      content: "";
-      position: relative;
-      left: 50%;
-      top: 8px;
-      transform: translateX(-50%);
-      display: block;
-      width: 40px;
-      height: 1px;
-      background: darken(#a2a2a2, 20%);
-      transition: width 0.3s;
-    }
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #4a5568;
   }
 
   &__text {
-    color: #a2a2a2;
-    padding-top: 1rem;
-    text-align: left;
-    text-indent: 1em;
-    font-size: 16px;
-    line-height: 26px;
-    transition: color 0.3s;
+      font-size: 1rem;
+      color: #4a5568;
+      line-height: 1.45rem;
   }
 }

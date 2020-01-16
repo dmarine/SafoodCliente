@@ -1,105 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Safood | Engorda sin preocupaciones</title>
 
-    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/app.css" />
-  </head>
-  <body>
-    <div class="app">
-        <div class="app__header">
-          <div class="header">
-            <div class="header__logo">
-              <img class="logo-img" src="images/logo.png">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Sacard | Engorda sin preocupaciones</title>
+
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+
+<body>
+  <div class="app">
+    <div class="app__header">
+      <div class="header">
+        <div class="header__logo">
+          <a href="#/" class="header__link">
+            <img class="logo-img" src="images/logo.png">
+          </a>
+        </div>
+        <div class="header__menu">
+          <div class="menu">
+            <div id="loginModalButton" class="menu__option menu__option--flex  link">
+              <p class="link" id="user">Identificate</p>
+              <img class="avatar" id="avatar" src="images/miss-avatar.png">
             </div>
-            <div class="header__menu">
-              <div class="menu">
-                <div class="menu__option">
-                  <img class="avatar" src="images/miss-avatar.png">
-                </div>
-                <div class="menu__option"><a class="link" href="#">Quiero comer!</a></div>
-                <div class="menu__option"><a class="link" href="#">Quiero comida!</a></div>
-                <div class="menu__option menu__option--right">
-                  <div class="search">
-                    <i class="fas fa-search"></i>
-                    <input class="search__text-box" placeholder="Buscar...">
-                  </div>
-                </div>
+            <div id="cart" class="menu__option menu__option--flex link">
+              <p class="link">Mi carrito</p>
+              <img class="imgCart cart" src="images/basket.svg">
+              <p id="cartCount" class="cart__count"></p>
+            </div>
+            <div class="menu__option menu__option--center">
+              <div class="search">
+                <i class="fas fa-search"></i>
+                <input class="search__text-box" placeholder="Buscar...">
               </div>
             </div>
+            <div class="menu__option"><a class="link" href="#/foods">Quiero comida!</a></div>
+            <!-- <div class="menu__option"><a class="link" href="#/randomFood">Teddy's Surprise!</a></div> -->
           </div>
         </div>
-        <div class="app__body">
-          <div class="body">
-            <div class="body__menu-vertical">
-              <div class="menu-vertical">
-                <div class="menu-vertical__section">
-                  <h1 class="menu-vertical__section-title">Tipos de comida</h1>
-                  <div class="l-options" id="category"></div>
-                </div>
-              </div>
-            </div>
-            <div class="body__content">
-              <div class="slider">
-                <div class="slider__container" id="slider"></div>
-                <div class="slider__controllers">
-                  <div class="slider__controller slider__controller--left">&#10094;</div>
-                  <div class="slider__controller slider__controller--right">&#10095;</div>
-                </div>
-              </div>
-
-              <div class="l-columns l-columns--3-columns l-columns--m-2-columns l-columns--s-1-columns">
-                <div class="card">
-                  <i class="fab fa-weixin card__highlight"></i>
-                  <h3 class="card__title">Quienes somos</h3>
-                  <p class="card__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum, neque quis luctus
-                    efficitur, risus diam fringilla arcu, at mattis quam magna a quam. Nulla ante sem, venenatis sit amet
-                    posuere vel, pharetra eu ante.
-                  </p>
-                </div>
-                <div class="card">
-                  <i class="fa fa-lightbulb card__highlight"></i>
-                  <h3 class="card__title">Idea</h3>
-                  <p class="card__text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis condimentum, neque quis luctus
-                    efficitur, risus diam fringilla arcu, at mattis quam magna a quam. Nulla ante sem, venenatis sit amet
-                    posuere vel, pharetra eu ante.
-                  </p>
-                </div>
-                <div class="card">
-                  <i class="fa fa-users card__highlight"></i>
-                  <h3 class="card__title">Autores</h3>
-                  
-                  <p class="card__text"><i class="fa fa-user"></i> Daniel Marín</p>
-                  <p class="card__text"><i class="fa fa-user"></i> David Jiménez</p>
-                  <p class="card__text"><i class="fa fa-user"></i> Jose Antonio Rodríguez</p>
-                  <p class="card__text"><i class="fa fa-user"></i> Miguel Martínez </p>
-                  <p class="card__text"><i class="fa fa-user"></i> Liberto Álvarez </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="app__footer">
-          <div class="footer">
-            <div class="footer__head">
-              <a href="#" class="link link--light"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="link link--light"><i class="fab fa-facebook"></i></a>
-              <a href="#" class="link link--light"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="link link--light"><i class="fab fa-youtube"></i></a>
-            </div>
-            <div class="footer__body">
-                <p>@ 2019 Copyright - Safood</p>
-            </div>
-          </div>
-        </div>
+      </div>
     </div>
-    <script src="js/app.js" type="module"></script>
-  </body>
+    <div class="app__body">
+      <div class="body">
+        <div class="body__menu-vertical">
+          <div class="menu-vertical">
+            
+          </div>
+        </div>
+        <div class="body__content"></div>
+      </div>
+    </div>
+
+    <div id="modal" class="l-modal">
+      <div id="loginModal" class="modal modal--zoom">
+        <div class="modal__header">
+          <div class="modal__header-close">&times;</div>
+          <img src="images/miss-avatar.png" class="modal__header-image">
+        </div>
+        <div class="modal__body">
+          <form id="login" action="#">
+            <input name="email" class="modal__text-box" type="text" placeholder="Email...">
+            <input name="password" class="modal__text-box" type="password" placeholder="Contraseña...">
+          </form>
+          <button id="registerButton" class="button button--light">Registrarse</button>
+          <button id="loginSumit" class="button button--dark">Iniciar Sesión</button>
+        </div>
+      </div>
+
+      <div id="registerModal" class="modal modal--zoom">
+        <div class="modal__header">
+          <div class="modal__header-close">&times;</div>
+          <img src="images/miss-avatar.png" class="modal__header-image">
+        </div>
+        <div class="modal__body">
+          <form id="register" action="#">
+            <input name="name" class="modal__text-box" type="text" placeholder="Enter Name">
+            <input name="email" class="modal__text-box" type="email" placeholder="Enter Email">
+            <input class="modal__text-box" type="password" placeholder="Enter Password">
+            <input name="password" class="modal__text-box" type="password" placeholder="Repeat Password">
+          </form>
+          <button id="loginButton" class="button button--light">Volver</button>
+          <button id="registerSumit" class="button button--dark">Registrarse</button>
+        </div>
+      </div>
+
+      <div id="foodModal" class="modal modal--show modal--ancho modal--zoom">
+        <div class="modal__header">
+          <div class="modal__header-close">&times;</div>
+        </div>
+        <div class="modal__body"></div>
+      </div>
+    </div>
+
+    <div class="app__footer">
+      <div class="footer">
+        <div class="footer__head">
+          <a href="#" class="link link--light"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="link link--light"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="link link--light"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="link link--light"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer__body">
+          @2020 Copyright - Safood
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/app.js" type="module"></script>
+</body>
+
 </html>

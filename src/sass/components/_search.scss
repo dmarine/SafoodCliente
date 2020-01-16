@@ -1,11 +1,13 @@
+  
 .search {
     background-color: #edf2f7;
     border: .15rem solid #edf2f7;
     padding: .6rem;
     border-radius: .3rem;
-    width: 20rem;
+    width: 30rem;
 
     &__text-box {
+        width: 95%;
         background-color: transparent;
         border: none;
     }

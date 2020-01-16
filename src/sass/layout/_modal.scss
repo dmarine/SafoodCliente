@@ -1,0 +1,12 @@
+.l-modal {
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    position: fixed;
+    display: none;
+    height: 100%;
+    width: 100%;
+
+    &--show {
+        display: block;
+    }
+}
