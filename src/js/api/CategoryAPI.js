@@ -1,17 +1,10 @@
-import { getAPIUrl } from "./APIUtils.js";
+import { getData } from "../utils/APIUtils.js";
+import { Category } from "../models/Category.js";
 
-function getCategorys() {
-  $.ajax({
-    url: getAPIUrl("/categorys"),
-    success: function( result ) {
-      result.forEach(category => {
-        $("#category").append(`<div class="option">${category.name}</div>`)
-      });
-    },
-    error: function(err) {
-      console.log('error')
-    }
-  });
+function getCategories() {
+  return getData('categories').then(result => {
+    return result.map(c => new Category(c.id, c.name));
+  })
 }
 
-export { getCategorys }
+export { getCategories }

@@ -1,9 +1,26 @@
-# SafoodCliente
-añadir en deploy:
-cp -r src/css/segoe/* dist/css/segoe/
+## SafoodCliente start
+```
+git clone https://github.com/dmarine/SafoodCliente.git
+```
 
-npm install (modificado .npmrc)
-deploy
-Arrancar Xampp/mySQL
+### Instalar dependencias
+```
+npm install
+```
 
-http://localhost/SafoodCliente/
+### Build
+```
+npm run build
+```
+
+## Rutas
+| Class        | Uri                            |
+| ------------ | ------------------------------ |
+| Home         | /                              |
+| Foods        | /foods                         |
+| Category     | /categorys/{id}                |
+
+## Librerias
+- [JQuery](https://github.com/jquery/jquery)
+- [JQuery serializeJSON](https://github.com/marioizquierdo/jquery.serializeJSON)
+- [JS Cookie](https://github.com/js-cookie/js-cookie)

@@ -1,8 +1,15 @@
 // Base
 @import "base/reset";
 @import "base/typography";
+<<<<<<< HEAD
 
 // Components
+=======
+@import "base/animations";
+
+// Components
+@import "components/food";
+>>>>>>> develop
 @import "components/menu";
 @import "components/search";
 @import "components/link";
@@ -10,11 +17,28 @@
 @import "components/checkbox";
 @import "components/slider";
 @import "components/card";
+<<<<<<< HEAD
 @import "components/footer";
 @import "components/option";
+=======
+@import "components/info";
+@import "components/footer";
+@import "components/option";
+@import "components/form-modal";
+@import "components/badge";
+@import "components/modal";
+@import "components/error-page";
+@import "components/toast";
+@import "components/button";
+>>>>>>> develop
 
 // Layout
 @import "layout/app";
 @import "layout/header";
 @import "layout/body";
+<<<<<<< HEAD
 @import "layout/columns";
+=======
+@import "layout/columns";
+@import "layout/modal";
+>>>>>>> develop

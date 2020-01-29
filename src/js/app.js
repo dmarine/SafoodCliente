@@ -1,8 +1,18 @@
-import '../../node_modules/jquery/dist/jquery.js';
-import { getCarousel } from "./api/CarrouselAPI.js";
-import { getCategorys } from "./api/CategoryAPI.js";
+import "../../node_modules/jquery/dist/jquery.js";
+import "../../node_modules/jquery-serializejson/jquery.serializejson.js";
+import "../../node_modules/js-cookie/src/js.cookie.js";
+
+import { router } from "./views/Route.js";
+import { formAction } from "./views/components/Modal.js";
+import { formAuthAction, isLogin } from './api/loginAPI.js';
+import { showCart } from "./views/components/Cart.js";
+
+window.addEventListener('hashchange', router);
+window.addEventListener('load', router);
 
 $(document).ready(function() {
-  getCategorys();
-  getCarousel();
+    formAction()
+    formAuthAction()
+    isLogin()
+    showCart()
 });
