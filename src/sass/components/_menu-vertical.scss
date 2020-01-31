@@ -13,6 +13,15 @@
             color: #97A4B5;
             font-weight: bold;
             margin: 1rem 1rem .5rem 1rem;
+            user-select: none;
+
+            @media (max-width: 600px) {
+                margin: 0 .5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            border: none;
         }
     }
 }

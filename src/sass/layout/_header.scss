@@ -23,5 +23,25 @@
     &__menu {
         grid-area: header__menu;
         background: #ffffff;
+
+        &-icon {
+            color: #FFFFFF;
+            font-size: 2rem;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: none;
+            cursor: pointer;
+
+            @media (max-width: 600px) {
+                display: block;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        grid-template-areas: "header__logo"
+                             "header__menu";
+        grid-template-columns: 100%;
     }
 }

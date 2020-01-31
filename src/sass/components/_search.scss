@@ -7,7 +7,7 @@
     width: 30rem;
 
     &__text-box {
-        width: 95%;
+        width: 90%;
         background-color: transparent;
         border: none;
     }
@@ -19,5 +19,13 @@
     &:focus-within {
         background-color: #ffffff;
         border: .15rem solid #edf2f7;
+    }
+
+    @media (min-width: 600px) and (max-width: 1200px) {
+        width: 20rem;
+    }
+
+    @media (max-width: 600px) {
+        width: 100%;
     }
 }

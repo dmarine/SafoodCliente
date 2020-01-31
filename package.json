@@ -32,6 +32,6 @@
     "jquery": "^3.4.1",
     "jquery-serializejson": "^2.9.0",
     "js-cookie": "^2.2.1",
-    "sass": "^1.24.5"
+    "sass": "^1.25.0"
   }
 }

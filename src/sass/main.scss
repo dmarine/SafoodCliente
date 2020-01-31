@@ -2,9 +2,9 @@
 @import "base/reset";
 @import "base/typography";
 @import "base/animations";
+@import "base/global";
 
 // Components
-@import "components/food";
 @import "components/menu";
 @import "components/search";
 @import "components/link";
@@ -15,12 +15,15 @@
 @import "components/info";
 @import "components/footer";
 @import "components/option";
-@import "components/form-modal";
 @import "components/badge";
 @import "components/modal";
 @import "components/error-page";
 @import "components/toast";
 @import "components/button";
+@import "components/dropdown";
+@import "components/cart";
+@import "components/quantity";
+@import "components/profile";
 
 // Layout
 @import "layout/app";
@@ -28,3 +31,6 @@
 @import "layout/body";
 @import "layout/columns";
 @import "layout/modal";
+@import "layout/options";
+@import "layout/allergens";
+@import "layout/toast";

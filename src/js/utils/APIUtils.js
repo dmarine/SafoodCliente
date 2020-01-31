@@ -1,6 +1,8 @@
 import { Category } from "../models/Category.js";
 import { Restaurant } from "../models/Restaurant.js";
 import { Slide } from "../models/Slide.js";
+import { Allergen } from "../models/Allergen.js";
+import { toast } from "../views/components/Toast.js";
 
 let url = "http://localhost:8000"
 
@@ -16,7 +18,7 @@ function getImageUrl(request, imageName) {
   return (request) ? `${url}/images/${request}/${imageName}` : `${url}/images/${imageName}`
 }
 
-function getData(url) {
+export function getData(url) {
   return new Promise((resolve, reject) => {
     $.ajax({
       url: getAPIUrl(url),
@@ -32,7 +34,7 @@ function getData(url) {
   });
 }
 
-function getBasicData(type) {
+export function getBasicData(type) {
   let data = null
   switch (type) {
     case 'categories':
@@ -43,6 +45,9 @@ function getBasicData(type) {
       break;
     case 'carousel':
       data = Slide
+      break;
+    case 'allergens':
+      data = Allergen
       break;
   }
   
@@ -58,7 +63,7 @@ function getBasicData(type) {
   })
 }
 
-function getAuthData(form, type) {
+export function getAuthData(form, type) {
   return new Promise((resolve, reject) => {
     $.ajax({
         url: getAPIAuthUrl(type),
@@ -69,16 +74,14 @@ function getAuthData(form, type) {
         },
         error: function(err) {
           let errorText = (type == 'login') ? 'Email o contraseña incorrecto' : 'Error al registrarse'
-          let errorTextInHTML = ($(`#${type} > .modal__text-box--error`).length == 0)
-
+          toast(errorText, "error")
           $(`#${type} > .modal__text-box`).addClass('modal__text-box--error')
-          if(errorTextInHTML) { $(`#${type}`).append(`<div class="modal__text modal__text--error">${err.statusText}: ${errorText}</div>`) }
         }
     })
   })
 }
 
-function getUserData(token, action) {
+export function getUserData(token, action) {
   return new Promise((resolve, reject) => {
     $.ajax({
         url: getAPIAuthUrl(action),
@@ -94,4 +97,87 @@ function getUserData(token, action) {
   })
 }
 
-export { getAPIUrl, getAPIAuthUrl, getImageUrl, getData, getBasicData, getAuthData, getUserData }
+export function updateUserData(data) {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+        url: getAPIAuthUrl('update'),
+        type: "PUT",
+        data: data,
+        headers: { 'Authorization': `Bearer ${Cookies.get('token')}`},
+        success: function(result) {
+          resolve(result)
+        },
+        error: function(err) {
+          reject(err)
+        }
+    })
+  })
+}
+
+export function setOrderData(food) {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+        url: getAPIAuthUrl('orders'),
+        type: "POST",
+        data: {food_id: food.id, quantity: food.quantity},
+        headers: { 'Authorization': `Bearer ${Cookies.get('token')}`},
+        success: function(result) {
+          resolve(result)
+        },
+        error: function(err) {
+          reject(err)
+        }
+    })
+  })
+}
+
+export function deleteOrderData(food) {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+        url: getAPIAuthUrl('orders'),
+        type: "DELETE",
+        data: {food_id: food.id},
+        headers: { 'Authorization': `Bearer ${Cookies.get('token')}`},
+        success: function(result) {
+          resolve(result)
+        },
+        error: function(err) {
+          reject(err)
+        }
+    })
+  })
+}
+
+export function getOrderData() {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+        url: getAPIAuthUrl('orders'),
+        type: "GET",
+        headers: { 'Authorization': `Bearer ${Cookies.get('token')}`},
+        success: function(result) {
+          resolve(result)
+        },
+        error: function(err) {
+          reject(err)
+        }
+    })
+  })
+}
+
+export function setNewCartData() {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+        url: getAPIAuthUrl('cart'),
+        type: "POST",
+        headers: { 'Authorization': `Bearer ${Cookies.get('token')}`},
+        success: function(result) {
+          resolve(result)
+        },
+        error: function(err) {
+          reject(err)
+        }
+    })
+  })
+}
+
+export { getAPIUrl, getAPIAuthUrl, getImageUrl }

@@ -15,14 +15,15 @@ function showSlide(number) {
 
 function slideControllers() {
     $(".slider__controller--left").click(function() { plusSlide(-1) })
-    $(".slider__controller--right").click(function() { plusSlide(1) })
+    $(".slider__controller--right").click(function(event) { event.stopPropagation()
+                                                            plusSlide(1) })
 }
 
 let interval = null
 function slideAuto() {
     interval = setInterval(function() {
         (!paused) && $('.slider__controller--right').trigger('click');
-    }, 5000);
+    }, 8000);
 
     $('.slider').hover(function() { paused = true; }, function() { paused = false; });
 }

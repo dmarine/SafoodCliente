@@ -1,0 +1,24 @@
+.profile {
+    padding-top: 1rem;
+    min-height: 200px;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+
+    &__title {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    &__section {
+        padding-bottom: 1rem;
+
+        @media (max-width: 600px) {
+            padding: 0 1rem;
+        }
+    }
+
+    &__input {
+        margin: 1rem 0;
+    }
+}

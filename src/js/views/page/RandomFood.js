@@ -1,30 +1,31 @@
-import { Carousel } from "../components/Carousel.js";
-import { InfoCard } from "../components/InfoCard.js";
 import { FoodCard } from "../components/FoodCard.js";
 import { Navbar } from "../components/Navbar.js";
+import { showFoodModal } from "../components/Modal.js";
+import { getRandomFood } from "../../api/FoodAPI.js";
 
-let Home = {
+let RandomFood = {
   render: async () => {
     return new Promise((resolve, reject) => {
-      let promises = [Carousel.render(), InfoCard.render(), FoodCard.render()]
+        resolve(FoodCard.render())
+    })
+  },
+  renderMenu: async () => {
+    return new Promise((resolve, reject) => {
+      let promises = [Navbar.render(), Navbar.renderFilters()]
 
       Promise.all(promises).then(data => {
         resolve(data)
       })
     })
   },
-  renderMenu: async () => {
-    return new Promise((resolve, reject) => {
-      Navbar.render().then(data => {
-        resolve(data)
-      })
-    })
-  },
   after_render: async () => {
-    Carousel.after_render()
     FoodCard.after_render()
+    getRandomFood().then(food => {
+        showFoodModal(food)
+    })
     Navbar.after_render()
+    Navbar.after_renderFilters()
   }
 };
 
-export { Home };
+export { RandomFood }

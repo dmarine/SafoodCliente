@@ -6,4 +6,8 @@
     &:hover {
         background-color: #1a202c;
     }
+
+    @media (max-width: 600px) {
+        text-align: center;
+    }
 }

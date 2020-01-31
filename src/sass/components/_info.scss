@@ -67,4 +67,8 @@
       line-height: 26px;
       transition: color 0.3s;
     }
+
+    @media (max-width: 600px) {
+        margin: .3rem auto;
+    }
   }

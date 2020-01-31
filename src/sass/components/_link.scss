@@ -3,6 +3,18 @@
     color: #1a202c;
     font-weight: 600;
     padding: .5rem;
+    cursor: pointer;
+
+    &__url {
+        text-decoration: none;
+        color: #1a202c;
+
+        @media (max-width: 600px) {
+            width: 100%;
+            margin: .3rem auto;
+            padding: .3rem;
+        }
+    }
 
     &:hover {
         background-color: #edf2f7;
@@ -15,5 +27,11 @@
         &:hover {
             background-color: #1a202c;
         }
+    }
+
+    @media (max-width: 600px) {
+        width: 100%;
+        margin: .3rem auto;
+        padding: .3rem;
     }
 }

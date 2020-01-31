@@ -1,21 +1,48 @@
 .button {
-    color: white;
+    color: #333;
     padding: 14px 20px;
     margin: 0.3rem 0rem 0.5rem 0rem;
     border: none;
-    cursor: pointer;
     width: 13.8rem;
     border-radius: .2rem;
+    cursor: pointer;
 
     &--dark {
         background-color: #4d5d80;
+        color: #ffffff;
     }
 
     &--light {
         background-color: #1a202c;
+        color: #ffffff;
+    }
+
+    &--width {
+        border-radius: 0 0 .2rem .2rem;
+        width: 100%;
+        margin: 0;
+    }
+
+    &--modal {
+        @media (max-width: 600px) {
+            border-radius: 0 0 .6rem .6rem;
+            margin: 0;
+        }
     }
 
     &:hover {
         opacity: 0.8;
+    }
+
+    &:disabled {
+        color: #ccc;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    @media (max-width: 600px) {
+        width: 100%;
     }
 }

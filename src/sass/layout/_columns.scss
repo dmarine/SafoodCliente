@@ -6,22 +6,26 @@
             grid-template-columns: repeat($i,1fr);
         }
 
-        &--s-#{$i}-columns {
+        &--#{$i}-columns\@mobile {
             @media (max-width: 600px) {
                 grid-template-columns: repeat($i,1fr) !important;
             }
         }
 
-        &--m-#{$i}-columns {
+        &--#{$i}-columns\@tablet {
             @media (min-width: 600px) and (max-width: 1200px) {
                 grid-template-columns: repeat($i,1fr) !important;
             }
         }
 
-        &--l-#{$i}-columns {
+        &--#{$i}-columns\@desktop {
             @media (min-width: 1200px) {
                 grid-template-columns: repeat($i,1fr) !important;
             }
         }
+    }
+
+    &--margin {
+        margin: 1rem;
     }
 }

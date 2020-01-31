@@ -1,0 +1,23 @@
+.l-options {
+    display: flex;
+    flex-direction: column;
+
+    &--row {
+        flex-direction: row;
+    }
+
+    &--center {
+        justify-content: center;
+    }
+
+    @media (max-width: 600px) {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: initial;
+
+        &::-webkit-scrollbar {
+            display: none; 
+        }
+    }
+}
