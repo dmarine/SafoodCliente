@@ -10,7 +10,8 @@ let InfoCard = {
                 </p>
                 </div>
                 <div class="info">
-                <img style="height: 5rem;width: 5rem;align-self: center;" src="images/logo-safood.png">
+                <i class="fa fa-lightbulb info__highlight"></i>
+                <h3 class="info__title">Idea</h3>
                 <h3 class="info__title"></h3>
                 <p class="info__text">
                     Safood es una web dedicada a la venta de comida donde ponemos expecial interes en los alergenos que tienen, 

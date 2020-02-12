@@ -2,7 +2,7 @@
     display: none;
     background-color: #fefefe;
     margin: 5% auto 15% auto;
-    width: 30rem;
+    width: 30.5rem;
     border-radius: 0.6rem;
     padding-top: 2rem;
     
@@ -158,6 +158,11 @@
             height: 5rem;
             border-radius: 50%;
             cursor: pointer;
+
+            &--droppable {
+                opacity: 0.3;
+                background-color: lightgrey;
+            }
         }
     
         &-close {

@@ -2,20 +2,20 @@ import { Category } from "../models/Category.js";
 import { Restaurant } from "../models/Restaurant.js";
 import { Slide } from "../models/Slide.js";
 import { Allergen } from "../models/Allergen.js";
-import { toast } from "../views/components/Toast.js";
 
-let url = "http://localhost:8000"
+import { toast } from "../views/components/Toast.js";
+import { config } from "../config.js";
 
 function getAPIUrl(request) {
-  return `${url}/api/${request}`
+  return `${config.API_URL}/api/${request}`
 }
 
 function getAPIAuthUrl(request) {
-  return `${url}/api/auth/${request}`
+  return `${config.API_URL}/api/auth/${request}`
 }
 
 function getImageUrl(request, imageName) {
-  return (request) ? `${url}/images/${request}/${imageName}` : `${url}/images/${imageName}`
+  return (request) ? `${config.API_URL}/images/${request}/${imageName}` : `${config.API_URL}/images/${imageName}`
 }
 
 export function getData(url) {
@@ -164,11 +164,46 @@ export function getOrderData() {
   })
 }
 
+export function getCartsUser() {
+  return new Promise((resolve, reject) => {
+    $.ajax({
+        url: getAPIAuthUrl('cart'),
+        type: "GET",
+        headers: { 'Authorization': `Bearer ${Cookies.get('token')}`},
+        success: function(result) {
+          resolve(result)
+        },
+        error: function(err) {
+          reject(err)
+        }
+    })
+  })
+}
+
 export function setNewCartData() {
   return new Promise((resolve, reject) => {
     $.ajax({
         url: getAPIAuthUrl('cart'),
         type: "POST",
+        headers: { 'Authorization': `Bearer ${Cookies.get('token')}`},
+        success: function(result) {
+          resolve(result)
+        },
+        error: function(err) {
+          reject(err)
+        }
+    })
+  })
+}
+
+export function updateAvatar(formData){
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: getAPIAuthUrl("update-avatar"),
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
         headers: { 'Authorization': `Bearer ${Cookies.get('token')}`},
         success: function(result) {
           resolve(result)
