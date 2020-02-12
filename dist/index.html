@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
@@ -10,8 +10,13 @@
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/app.css" />
 </head>
-
 <body>
+  <!--
+  \    /\
+   )  ( ')
+  (  /  )
+   \(__)|
+  -->
   <div class="app">
     <div class="app__header">
       <div class="header">
@@ -19,14 +24,23 @@
           <a href="#/" class="header__link">
             <img class="logo-img" src="images/logo.png">
           </a>
+          <i id="menu" class="fas fa-bars header__menu-icon"></i>
         </div>
         <div class="header__menu">
           <div class="menu">
-            <div id="loginModalButton" class="menu__option menu__option--flex  link">
-              <p class="link" id="user">Identificate</p>
-              <img class="avatar" id="avatar" src="images/miss-avatar.png">
+            <div class="dropdown">
+              <div id="loginModalButton" class="menu__option link">
+                <p class="link" id="user">Identificate</p>
+                <img class="avatar" id="avatar" src="images/miss-avatar.png">
+              </div>
+
+              <div class="dropdown__menu-arrow"></div>              
+              <div class="dropdown__menu">
+                <a class="dropdown__item">Perfil</a>
+                <a class="dropdown__item" href="#/logout">Cerrar Sesión</a>
+              </div>
             </div>
-            <div id="cart" class="menu__option menu__option--flex link">
+            <div id="cart" class="menu__option link">
               <p class="link">Mi carrito</p>
               <img class="imgCart cart" src="images/basket.svg">
               <p id="cartCount" class="cart__count"></p>
@@ -37,18 +51,17 @@
                 <input class="search__text-box" placeholder="Buscar...">
               </div>
             </div>
-            <div class="menu__option"><a class="link" href="#/foods">Quiero comida!</a></div>
+            <div class="menu__option link"><a class="link__url" href="#/foods">Quiero comida!</a></div>
             <!-- <div class="menu__option"><a class="link" href="#/randomFood">Teddy's Surprise!</a></div> -->
           </div>
         </div>
       </div>
     </div>
+    
     <div class="app__body">
       <div class="body">
         <div class="body__menu-vertical">
-          <div class="menu-vertical">
-            
-          </div>
+          <div class="menu-vertical"></div>
         </div>
         <div class="body__content"></div>
       </div>

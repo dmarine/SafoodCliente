@@ -4,11 +4,17 @@
     grid-template-columns: 18rem;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> develop
     &__link {
         width: 100%;
     }
 
+<<<<<<< HEAD
+>>>>>>> develop
+=======
 >>>>>>> develop
     &__logo {
         grid-area: header__logo;
@@ -19,6 +25,11 @@
         .logo-img {
             width: 9rem;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            display: block;
+            margin: auto;
+>>>>>>> develop
 =======
             display: block;
             margin: auto;
@@ -29,5 +40,28 @@
     &__menu {
         grid-area: header__menu;
         background: #ffffff;
+<<<<<<< HEAD
+=======
+
+        &-icon {
+            color: #FFFFFF;
+            font-size: 2rem;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: none;
+            cursor: pointer;
+
+            @media (max-width: 600px) {
+                display: block;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        grid-template-areas: "header__logo"
+                             "header__menu";
+        grid-template-columns: 100%;
+>>>>>>> develop
     }
 }

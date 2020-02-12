@@ -1,10 +1,10 @@
 import { FoodCard } from "../components/FoodCard.js";
 import { Navbar } from "../components/Navbar.js";
 
-let Category = {
-  render: async (idCategory) => {
+let Search = {
+  render: async (searchText) => {
     return new Promise((resolve, reject) => {
-        resolve(FoodCard.render(idCategory))
+        resolve(FoodCard.render(null, null, searchText))
     })
   },
   renderMenu: async () => {
@@ -16,11 +16,11 @@ let Category = {
       })
     })
   },
-  after_render: async (idCategory) => {
+  after_render: async () => {
     FoodCard.after_render()
     Navbar.after_render()
-    Navbar.after_renderFilters(idCategory)
+    Navbar.after_renderFilters()
   }
 };
 
-export { Category }
+export { Search }

@@ -1,10 +1,13 @@
-import { getImageUrl, getAuthData, getUserData } from "../utils/APIUtils.js";
-import { hideModal, removeLoginModal } from "../views/components/Modal.js";
+import { getImageUrl, getAuthData, getUserData, setOrderData } from "../utils/APIUtils.js";
+import { hideModal, removeLoginModal, setUserModal, showUserModal } from "../views/components/Modal.js";
 import { toast } from "../views/components/Toast.js";
+import { checkForm } from "../views/components/Form.js";
+import { cart } from "../views/components/Cart.js";
+import { getOrderFoods } from "./OrderAPI.js";
 
 function formAuthAction() {
-    let loginForm = $('#login');
-    let registerForm = $('#register');
+    let loginForm = $('#login')
+    let registerForm = $('#register')
     
     $('#loginSumit').on("click", function() { loginForm.submit() })
     $('#registerSumit').on("click", function() { registerForm.submit() })
@@ -19,9 +22,14 @@ function formAuthAction() {
     registerForm.on("submit", function(event) {
         event.preventDefault()
 
-        getAuthData(registerForm, 'register').then(token => {
-            login(token)
-        })
+        if(checkForm(registerForm)) {
+            getAuthData(registerForm, 'register').then(token => {
+                login(token)
+            })
+        } else {
+            $(`#register > .modal__text-box`).addClass('modal__text-box--error')
+            toast("Error al registrarse: Compruebe los campos", "error")
+        }
     });
 }
 
@@ -29,15 +37,19 @@ function login(token) {
     Cookies.set('token', token.access_token, { expires: token.expires_in })
     hideModal()
     isLogin()
+    window.location = `${location.origin}${location.pathname}#/`
     toast(`Bienvenido ${token.user.name}`)
     removeLoginModal()
 }
 
 function logout(token) {
-    getUserData(token, 'logout')
-    Cookies.remove('token')
-    toast(`Has deslogeado`)
-    location.reload();
+    if(Cookies.get('token')) {
+        getUserData(token, 'logout')
+        Cookies.remove('token')
+        window.location = `${location.origin}${location.pathname}#/`
+        location.reload()
+        toast(`Has deslogeado correctamente`)
+    }
 }
 
 function isLogin() {
@@ -45,14 +57,53 @@ function isLogin() {
     if(token) { getUserData(token, 'me').then(user => {
         let avatar = (user.avatar) ? `${getImageUrl('avatar', user.avatar)}` : `${getImageUrl('avatar', 'miss-avatar.png')}`
         
-        $('#user').html(user.name);
+        $('#user').html(user.name)
         $('#avatar').attr('src', avatar)
-        $('#loginModalButton').unbind('click');
-        $('#loginModalButton').prop('id', 'userAction');
-        $('#userAction').on('click', function() {
-            logout(token)
+        $('#loginModalButton').unbind('click')
+        $('#loginModalButton').parent().prop('id', 'userAction')
+        $('#loginModalButton').children().removeAttr('id')
+        $('#loginModalButton').removeAttr('id')
+        $('#userAction').on('click', function(event) {
+            event.stopPropagation()
+            
+            $("#cart").next().removeClass("g--show")
+            $("#cart").next().next().removeClass("g--show")
+
+            let dropdown = $(this)
+            if(!dropdown.children().hasClass("g--show")) {
+                dropdown.children(".dropdown__menu").addClass("g--show")
+                dropdown.children(".dropdown__menu-arrow").addClass("g--show")
+            } else {
+                dropdown.children(".dropdown__menu").removeClass("g--show")
+                dropdown.children(".dropdown__menu-arrow").removeClass("g--show")
+            }
+        })
+
+        cart.setUserID(user.id)
+
+        let cartInLS = JSON.parse(localStorage.getItem('productsList'))
+        if(cartInLS) {
+            cartInLS.forEach(food => {
+                setOrderData(food)
+            })
+            localStorage.clear()
+        }
+        
+        getOrderFoods().then(foods => {
+            if(foods.length > 0) {
+                Promise.all(foods).then(food => {
+                    cart.setProducts(food)
+                })
+            }
+        })
+
+        setUserModal(user)
+        $('#profile').on('click', function() {
+            $("#userAction").children(".dropdown__menu").removeClass("g--show")
+            $("#userAction").children(".dropdown__menu-arrow").removeClass("g--show")
+            showUserModal()
         })
     })}
 }
 
-export { formAuthAction, isLogin }
+export { formAuthAction, isLogin, logout }

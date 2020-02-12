@@ -12,4 +12,10 @@
         grid-area: body__content;
         background: #e2e8f0;
     }
+
+    @media (max-width: 600px) {
+        grid-template-areas: "body__menu-vertical"
+                             "body__content";
+        grid-template-columns: 100%;
+    }
 }

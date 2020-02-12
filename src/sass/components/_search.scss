@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  
+>>>>>>> develop
 =======
   
 >>>>>>> develop
@@ -8,6 +12,7 @@
     padding: .6rem;
     border-radius: .3rem;
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 20rem;
 
     &__text-box {
@@ -16,6 +21,12 @@
 
     &__text-box {
         width: 95%;
+>>>>>>> develop
+=======
+    width: 30rem;
+
+    &__text-box {
+        width: 90%;
 >>>>>>> develop
         background-color: transparent;
         border: none;
@@ -29,4 +40,15 @@
         background-color: #ffffff;
         border: .15rem solid #edf2f7;
     }
+<<<<<<< HEAD
+=======
+
+    @media (min-width: 600px) and (max-width: 1200px) {
+        width: 20rem;
+    }
+
+    @media (max-width: 600px) {
+        width: 100%;
+    }
+>>>>>>> develop
 }

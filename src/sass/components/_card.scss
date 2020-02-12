@@ -1,5 +1,6 @@
 .card {
 <<<<<<< HEAD
+<<<<<<< HEAD
   padding: 40px;
   width: 300px;
   transition: box-shadow 0.3s;
@@ -68,6 +69,8 @@
     line-height: 26px;
     transition: color 0.3s;
 =======
+=======
+>>>>>>> develop
   box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
   overflow: hidden;
   max-width: 24rem;
@@ -80,6 +83,16 @@
   &__image {
       width: 100%;
       height: 20rem;
+<<<<<<< HEAD
+=======
+
+      @media (max-width: 600px) {
+        height: 15rem;
+        width: 85%;
+        display: block;
+        margin: auto;
+      }
+>>>>>>> develop
   }
 
   &__body, &__footer {
@@ -107,6 +120,13 @@
       font-size: 1rem;
       color: #4a5568;
       line-height: 1.45rem;
+<<<<<<< HEAD
+>>>>>>> develop
+=======
+  }
+
+  @media (max-width: 600px) {
+    margin: .5rem auto;
 >>>>>>> develop
   }
 }

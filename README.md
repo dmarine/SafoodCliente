@@ -14,11 +14,14 @@ npm run build
 ```
 
 ## Rutas
-| Class        | Uri                            |
-| ------------ | ------------------------------ |
-| Home         | /                              |
-| Foods        | /foods                         |
-| Category     | /categorys/{id}                |
+| Class        | Uri                           |
+| ------------ | ----------------------------- |
+| Home         | /                             |
+| Foods        | /foods                        |
+| Foods        | /random-food                  |
+| Category     | /category/{id}                |
+| Logout       | /logout                       |
+| Error404     | *                             |
 
 ## Librerias
 - [JQuery](https://github.com/jquery/jquery)

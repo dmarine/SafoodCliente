@@ -1,7 +1,7 @@
 import { getImageUrl } from "../utils/APIUtils.js"
 
 class Food {
-    constructor(id, name, category, restaurant, image, description, price, quantity = null, allergens = null) {
+    constructor(id, name, category, restaurant, image, description, price, allergens = null, quantity = null) {
         this.id = id
         this.name = name
         this.category = category
@@ -9,7 +9,8 @@ class Food {
         this.image = image
         this.description = description
         this.price = price
-        this.allergens = allergens;
+        this.allergens = allergens
+        this.quantity = quantity || 1
         
         if (quantity == null) { this.quantity = 1; }
             else { this.quantity = quantity; }
@@ -17,6 +18,14 @@ class Food {
 
     getImage() {
         return `${getImageUrl("food", this.image)}`
+    }
+
+    plusQuantity() {
+        this.quantity += 1;
+    }
+
+    minusQuantity() {
+        this.quantity -= 1;
     }
 }
 

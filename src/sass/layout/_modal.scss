@@ -1,12 +1,16 @@
 .l-modal {
     background-color: rgba(0, 0, 0, 0.4);
-    overflow: hidden;
     position: fixed;
     display: none;
     height: 100%;
     width: 100%;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
 
-    &--show {
-        display: block;
+    @media (max-width: 600px) {
+        overflow: auto;
     }
 }
