@@ -36,23 +36,29 @@
 
               <div class="dropdown__menu-arrow"></div>              
               <div class="dropdown__menu">
-                <a class="dropdown__item">Perfil</a>
+                <a class="dropdown__item" id="profile">Perfil</a>
                 <a class="dropdown__item" href="#/logout">Cerrar Sesión</a>
               </div>
             </div>
-            <div id="cart" class="menu__option link">
-              <p class="link">Mi carrito</p>
-              <img class="imgCart cart" src="images/basket.svg">
-              <p id="cartCount" class="cart__count"></p>
+            
+            <div class="dropdown">
+              <div id="cart" class="menu__option link">
+                <p class="link">Mi carrito</p>
+                <img class="imgCart cart" src="images/basket.svg">
+                <p id="cartCount" class="cart__count">4</p>
+              </div>
+              <div id="cartArrow" class="dropdown__menu-arrow"></div>              
+              <div id="cartMenu" class="dropdown__menu cart"></div>
             </div>
+
             <div class="menu__option menu__option--center">
               <div class="search">
                 <i class="fas fa-search"></i>
-                <input class="search__text-box" placeholder="Buscar...">
+                <input id="search" class="search__text-box" placeholder="Buscar...">
               </div>
             </div>
             <div class="menu__option link"><a class="link__url" href="#/foods">Quiero comida!</a></div>
-            <!-- <div class="menu__option"><a class="link" href="#/randomFood">Teddy's Surprise!</a></div> -->
+            <div class="menu__option link"><a class="link__url" href="#/random-food">Food's Surprise!</a></div>
           </div>
         </div>
       </div>
@@ -67,13 +73,27 @@
       </div>
     </div>
 
+    <div class="app__footer">
+      <div class="footer">
+        <div class="footer__head">
+          <a href="#" class="link link--light"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="link link--light"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="link link--light"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="link link--light"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="footer__body">
+          @2020 Copyright - Safood
+        </div>
+      </div>
+    </div>
+
     <div id="modal" class="l-modal">
       <div id="loginModal" class="modal modal--zoom">
         <div class="modal__header">
           <div class="modal__header-close">&times;</div>
           <img src="images/miss-avatar.png" class="modal__header-image">
         </div>
-        <div class="modal__body">
+        <div class="modal__body modal__body--padding">
           <form id="login" action="#">
             <input name="email" class="modal__text-box" type="text" placeholder="Email...">
             <input name="password" class="modal__text-box" type="password" placeholder="Contraseña...">
@@ -88,37 +108,32 @@
           <div class="modal__header-close">&times;</div>
           <img src="images/miss-avatar.png" class="modal__header-image">
         </div>
-        <div class="modal__body">
+        <div class="modal__body modal__body--padding">
           <form id="register" action="#">
-            <input name="name" class="modal__text-box" type="text" placeholder="Enter Name">
-            <input name="email" class="modal__text-box" type="email" placeholder="Enter Email">
-            <input class="modal__text-box" type="password" placeholder="Enter Password">
-            <input name="password" class="modal__text-box" type="password" placeholder="Repeat Password">
+            <input name="name" class="modal__text-box" type="text" placeholder="Nombre">
+            <input name="email" class="modal__text-box" type="email" placeholder="Email">
+            <input name="password" class="modal__text-box" type="password" placeholder="Contraseña">
+            <input name="confirmPassword" class="modal__text-box" type="password" placeholder="Confirmar contraseña">
           </form>
           <button id="loginButton" class="button button--light">Volver</button>
           <button id="registerSumit" class="button button--dark">Registrarse</button>
         </div>
       </div>
 
-      <div id="foodModal" class="modal modal--show modal--ancho modal--zoom">
+      <div id="foodModal" class="modal modal--width modal--zoom g--show">
         <div class="modal__header">
           <div class="modal__header-close">&times;</div>
         </div>
-        <div class="modal__body"></div>
+        <div class="modal__body modal__body--padding"></div>
       </div>
-    </div>
 
-    <div class="app__footer">
-      <div class="footer">
-        <div class="footer__head">
-          <a href="#" class="link link--light"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="link link--light"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="link link--light"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="link link--light"><i class="fab fa-youtube"></i></a>
+      <div id="userModal" class="modal modal--image-backgorund modal--show modal--width modal--zoom">
+        <div class="modal__header">
+          <img id="profile-avatar" class="modal__header-avatar" />
+          <h2 id="profile-username" class="modal__title--profile"></h2>
+          <div class="modal__header-close">&times;</div>
         </div>
-        <div class="footer__body">
-          @2020 Copyright - Safood
-        </div>
+        <div class="modal__body"></div>
       </div>
     </div>
   </div>

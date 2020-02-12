@@ -1,6 +1,6 @@
-import "../../node_modules/jquery/dist/jquery.js";
-import "../../node_modules/jquery-serializejson/jquery.serializejson.js";
-import "../../node_modules/js-cookie/src/js.cookie.js";
+import "./vendor/jquery.min.js";
+import "./vendor/jquery.serializejson.min.js";
+import "./vendor/js.cookie.js";
 
 import { router } from "./views/Route.js";
 import { formAction } from "./views/components/Modal.js";
