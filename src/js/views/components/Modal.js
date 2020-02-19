@@ -127,7 +127,7 @@ function setUserModal(user) {
                                                                         <div id="cart-history__content" class="collapsible-history__content l-columns l-columns--3-columns l-columns--2-columns@tablet l-columns--2-columns@mobile g--hide">
                                                                         ${  cart.map(food => `
                                                                                 <div class="collapsible-history__content-food">
-                                                                                    <img class="collapsible-history__content-food-image" src="http://localhost:8000/images/food/${ food.image }">
+                                                                                    <img class="collapsible-history__content-food-image" src="${ getImageUrl("food", food.image) }">
                                                                                     <div class="collapsible-history__content-food-text">
                                                                                         <p class="">${ food.name } </p>
                                                                                         <p>${ food.price } € (x${ food.quantity })</p><br>
@@ -188,6 +188,29 @@ function setUserModal(user) {
         showProductsHistory()
 }
 
+function reloadCartHistory() {
+    getCartsUser().then(carts => {
+        $("#two-panel").html(`${  Object.values(carts).map(cart => {
+                                        return `<div class="collapsible-history" id="cart-history-${cart.id}">
+                                            <div class="collapsible-history__header"><div id="collapsible-history__header-text">Carrito | ${ cart.length } articulo(s)</div><i class="fas fa-chevron-down"></i></div>
+                                            <div id="cart-history__content" class="collapsible-history__content l-columns l-columns--3-columns l-columns--2-columns@tablet l-columns--2-columns@mobile g--hide">
+                                            ${  cart.map(food => `
+                                                    <div class="collapsible-history__content-food">
+                                                        <img class="collapsible-history__content-food-image" src="${ getImageUrl("food", food.image) }">
+                                                        <div class="collapsible-history__content-food-text">
+                                                            <p class="">${ food.name } </p>
+                                                            <p>${ food.price } € (x${ food.quantity })</p><br>
+                                                            <span class="">Total: ${ (food.price * food.quantity).toFixed(2) } €</span>
+                                                        </div>
+                                                    </div>`
+                                                ).join('\n') }
+                                            </div>
+                                        </div>`
+                                    }).join('\n')
+                                }`)
+    })
+}
+
 function placeNewAvatar(data) {
     let formData = new FormData()
     var file = data[0]
@@ -227,4 +250,4 @@ function removeLoginModal(){
     $("#modal").removeClass("g--show");
 }
 
-export { formAction, showFoodModal, hideModal, removeLoginModal, setUserModal, showUserModal }
+export { formAction, showFoodModal, hideModal, removeLoginModal, setUserModal, showUserModal, reloadCartHistory }

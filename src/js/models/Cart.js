@@ -1,5 +1,6 @@
 import { setOrderData, deleteOrderData, setNewCartData } from "../utils/APIUtils.js"
 import { toast } from "../views/components/Toast.js"
+import { reloadCartHistory } from "../views/components/Modal.js"
 
 class Cart {
     constructor() {
@@ -60,6 +61,7 @@ class Cart {
 
     process() {
         setNewCartData()
+        reloadCartHistory()
         this.products = new Array()
         toast(`Compra procesada`)
     }
