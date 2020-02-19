@@ -4,38 +4,17 @@
     justify-content: flex-end;
     flex-flow: row-reverse wrap;
     padding: .8rem;
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
->>>>>>> develop
-
-    &__option {
-=======
 
     &__option {
         display: flex;
->>>>>>> develop
         color: #1a202c;
         font-size: 0.9rem;
         font-weight: 600;
         margin: 0 .3rem;
         text-decoration: none;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        .avatar{
-            width: 2rem;
-=======
-        
-        &--center {
-            margin-right: auto;
-            margin-left: auto;
-=======
         
         &--center {
             margin: auto;
->>>>>>> develop
         }
         
         &--flex{
@@ -45,60 +24,19 @@
             }
         }
 
-<<<<<<< HEAD
-        &--hide {
-            display: none;
-        }
-
-=======
->>>>>>> develop
         .cart {
             border: none;
             border-radius: 0;
             width: 1.5rem;
-<<<<<<< HEAD
-
-            &__count {
-                display: none;
-                border-radius: 1rem;
-                height: 1.4rem;
-                width: 1.4rem;
-                line-height: 1.4rem;
-                text-align: center;
-                position: absolute;
-                top: 1.2rem;
-                right: 10rem;
-                font-size: .8rem;
-                background: rgba(255, 255, 255, .8);
-
-                &--show {
-                    display: block !important;
-                }
-            }
-=======
->>>>>>> develop
         }
 
         .avatar{
             width: 2rem;
             height: 2rem;
-<<<<<<< HEAD
->>>>>>> develop
-=======
->>>>>>> develop
             cursor: pointer;
             border: 1px solid #333;
             border-radius: 50%;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-        &--right {
-            margin-right: auto;
-        }
-=======
->>>>>>> develop
-=======
 
         @media (max-width: 600px) {
             width: 100%;
@@ -108,6 +46,5 @@
     @media (max-width: 600px) {
         display: none;
         flex-flow: column;
->>>>>>> develop
     }
 }

@@ -15,6 +15,7 @@
         appearance: none;
         cursor: pointer;
         margin-right: .3rem;
+
         &:checked {
             background-color: #667eea;
             border-radius: .3rem;
@@ -31,19 +32,11 @@
 
     &__text {
         color: #ffffff;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
         white-space: nowrap;
->>>>>>> develop
 
         &--dark {
             color: #333333;
         }
-<<<<<<< HEAD
->>>>>>> develop
-=======
     }
 
     &__checkbox {
@@ -57,25 +50,6 @@
             background-position: center;
             background-repeat: no-repeat;
         }
->>>>>>> develop
     }
 
 }
-
-<<<<<<< HEAD
-/**
-<div class="checkbox">
-    <input class="checkbox__check" type="checkbox">
-    <span class="checkbox__text"> Ensalada</span>
-</div>
-=======
-/*
-<label class="checkbox">
-    <input class="checkbox__checkbox" type="checkbox">
-    <div class="checkbox__check"></div>
-    <div class="checkbox__text">Ensalada</div>
-</label>
-
-    https://codepen.io/jedmac/pen/zvvBYp?editors=1010
->>>>>>> develop
-*/

@@ -653,7 +653,7 @@ table {
 }
 @media (max-width: 600px) {
   .slider img {
-    height: 15rem;
+    height: 12rem;
     border-radius: 0;
   }
 }
@@ -889,7 +889,7 @@ table {
   display: none;
   background-color: #fefefe;
   margin: 5% auto 15% auto;
-  width: 30rem;
+  width: 30.5rem;
   border-radius: 0.6rem;
   padding-top: 2rem;
 }
@@ -1021,6 +1021,10 @@ table {
   height: 5rem;
   border-radius: 50%;
   cursor: pointer;
+}
+.modal__header-avatar--droppable {
+  opacity: 0.3;
+  background-color: lightgrey;
 }
 .modal__header-close {
   position: absolute;
@@ -1319,63 +1323,6 @@ table {
   }
 }
 
-.quantity {
-  position: relative;
-}
-.quantity__input {
-  width: 3rem;
-  height: 100%;
-  line-height: 1.65;
-  float: left;
-  display: block;
-  padding: 0;
-  margin: 0 1rem;
-  padding-left: 1rem;
-  border: 1px solid #eee;
-  -moz-appearance: textfield;
-}
-.quantity__input:focus {
-  outline: none;
-}
-.quantity__input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-.quantity__button {
-  position: relative;
-  cursor: pointer;
-  border: 1px solid #eee;
-  width: 20px;
-  text-align: center;
-  color: #333;
-  font-size: 13px;
-  line-height: 1.7;
-  transform: translateX(-100%);
-  user-select: none;
-}
-.quantity__button--up, .quantity__button--down {
-  position: absolute;
-  height: 50%;
-  right: -1.45rem;
-}
-.quantity__button--up:hover, .quantity__button--down:hover {
-  background: #ddd;
-}
-.quantity__button--up {
-  top: 0;
-  border-bottom: 0.5px solid #eee;
-}
-.quantity__button--down {
-  bottom: 0;
-  border-top: 0.5px solid #eee;
-}
-
-/*
-<div class="quantity">
-    <input class="quantity__input" type="number" value="1">
-    <div class="quantity__button quantity__button--up">+</div>
-    <div class="quantity__button quantity__button--down">-</div>
-</div>
-*/
 .profile {
   padding-top: 1rem;
   min-height: 200px;
@@ -1397,6 +1344,94 @@ table {
 }
 .profile__input {
   margin: 1rem 0;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+.tabs__menu {
+  display: flex;
+  width: 100%;
+}
+.tabs__tab {
+  cursor: pointer;
+  width: 50%;
+  padding: 10px 20px;
+  background: #2D3748;
+  color: #fff;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+.tabs__tab__title {
+  text-align: center;
+}
+.tabs__frame {
+  min-height: 200px;
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
+}
+.tabs__panel {
+  display: none;
+  animation: fadein 0.8s;
+}
+.tabs__option {
+  display: none;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+#one:checked ~ .tabs__frame #one-panel,
+#two:checked ~ .tabs__frame #two-panel {
+  display: block;
+}
+
+#one:checked ~ .tabs__tabs #one-tab,
+#two:checked ~ .tabs__tabs #two-tab {
+  border-bottom: 4px solid #A3BFFA;
+}
+
+.collapsible-history {
+  margin: 1rem;
+}
+.collapsible-history__header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2d3748;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.collapsible-history__content {
+  display: none;
+  padding: 0 18px;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+.collapsible-history__content-food {
+  border: 1px solid #333;
+  margin: 0.1rem;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+}
+.collapsible-history__content-food-image {
+  width: 7rem;
+}
+.collapsible-history-arrow_icon {
+  margin: auto;
 }
 
 .app {

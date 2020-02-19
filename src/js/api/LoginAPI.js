@@ -4,6 +4,7 @@ import { toast } from "../views/components/Toast.js";
 import { checkForm } from "../views/components/Form.js";
 import { cart } from "../views/components/Cart.js";
 import { getOrderFoods } from "./OrderAPI.js";
+import { config } from "../config.js";
 
 function formAuthAction() {
     let loginForm = $('#login')
@@ -34,18 +35,21 @@ function formAuthAction() {
 }
 
 function login(token) {
-    Cookies.set('token', token.access_token, { expires: token.expires_in })
+    Cookies.set('token', token.access_token, { expires: (150.12 / token.expires_in) })
+    Cookies.set('token', token.access_token, { domain: config.ADMIN_URL })
+    removeLoginModal()
     hideModal()
     isLogin()
+
     window.location = `${location.origin}${location.pathname}#/`
     toast(`Bienvenido ${token.user.name}`)
-    removeLoginModal()
 }
 
 function logout(token) {
     if(Cookies.get('token')) {
         getUserData(token, 'logout')
         Cookies.remove('token')
+        Cookies.remove('token', { domain: config.ADMIN_URL })
         window.location = `${location.origin}${location.pathname}#/`
         location.reload()
         toast(`Has deslogeado correctamente`)
@@ -63,6 +67,8 @@ function isLogin() {
         $('#loginModalButton').parent().prop('id', 'userAction')
         $('#loginModalButton').children().removeAttr('id')
         $('#loginModalButton').removeAttr('id')
+
+        if(user.role) { $("#userAction").children(".dropdown__menu").prepend(`<a class="dropdown__item" href="${config.ADMIN_URL}">Admin</a>`) }
         $('#userAction').on('click', function(event) {
             event.stopPropagation()
             

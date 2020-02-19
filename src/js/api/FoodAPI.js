@@ -41,11 +41,13 @@ function getRandomFood() {
   return getData("food/random").then(food => {
     let categories = getBasicData('categories')
     let restaurants = getBasicData('restaurants')
+    let allergens = getFoodAllergens(food.id);
 
-    return Promise.all([categories, restaurants, food]).then(function(values) { 
+    return Promise.all([categories, restaurants, allergens, food]).then(function(values) { 
             let category = values[0].find(c => c.id === food.category_id)
             let restaurant = values[1].find(r => r.id === food.restaurant_id)
-            return new Food(food.id, food.name, category,  restaurant, food.image, food.description, food.price)
+            let allergens = values[2]
+            return new Food(food.id, food.name, category,  restaurant, food.image, food.description, food.price, allergens)
           });
   })
 }
