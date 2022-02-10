@@ -26,7 +26,7 @@
   "homepage": "https://github.com/dmarine/SafoodCliente#readme",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
-    "node-sass": "^4.14.1"
+    "node-sass": "^7.0.0"
   },
   "dependencies": {
     "jquery": "^3.5.1",
